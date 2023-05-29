@@ -4,9 +4,8 @@ import pickle
 
 app = FastAPI()
 
-# Load the model and encoder and scaler
+# Load the model and and scaler
 model = pickle.load(open("model.pkl", "rb"))
-encoder = pickle.load(open("encoder.pkl", "rb"))
 scaler = pickle.load(open("scaler.pkl", "rb"))
 
 # Define the input data model
@@ -29,15 +28,14 @@ def predict_churn(data: InputData):
     input_df = input_df_creator(data)
 
     # Encode categorical variables
-    cat_cols = input_df.select_dtypes(include=['object']).columns
-    cat_encoded = encoder.transform(input_df[cat_cols])
+    # cat_cols = input_df.select_dtypes(include=['object']).columns
+    # cat_encoded = encoder.transform(input_df[cat_cols])
 
     # Scale numerical variables
     num_cols = input_df.select_dtypes(include=['int64', 'float64']).columns
     num_scaled = scaler.transform(input_df[num_cols])
-
-    # joining encoded and scaled columns back together
-    processed_df = pd.concat([num_scaled, cat_encoded], axis=1)
+    
+    processed_df = num_scaled
 
     # Make prediction
     prediction = model.predict(processed_df)
