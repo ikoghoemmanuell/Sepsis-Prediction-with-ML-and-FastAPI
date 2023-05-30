@@ -1,9 +1,10 @@
 # Machine Learning API using FastAPI
-Develop a Machine Learning API (Application Programming Interface) using FastAPI.
+[![View My Profile](https://img.shields.io/badge/View-My_Profile-green?logo=GitHub)](https://github.com/your-github-username)
+[![View Repositories](https://img.shields.io/badge/View-My_Repositories-blue?logo=GitHub)](https://github.com/your-github-username?tab=repositories)
 
-[![python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-[![MIT licensed](https://img.shields.io/badge/license-mit-blue?style=for-the-badge&logo=appveyor)](./LICENSE)
-![Python](https://img.shields.io/badge/python-3.9-blue.svg)
+[![View My Profile](https://img.shields.io/badge/MEDIUM-Article-purple?logo=Medium)](https://medium.com/@emmanuel.ikogho/deploying-a-machine-learning-model-with-gradio-97d4f8c5e795)
+
+Develop a Machine Learning API (Application Programming Interface) using FastAPI.
 
 ## Introduction
 
@@ -14,18 +15,6 @@ In this project, Icreate an API that might be requested to interact with a ML mo
 **Source** : *The benefits of Machine Learning APIs - UbiOps*
 
 ## Description
-
-<!-- 
-[FastAPI](https://fastapi.tiangolo.com/) # 
--->
-
-There is  a minimal API demo with [FastAPI](https://fastapi.tiangolo.com/), this will make sure that everything works correctly. Then, I will then create my own API, this will allow you to interact with a Machine Learning model, that is:
-- Pass data through a request;
-- Get the data in using the API;
-- Apply the necessary processing;
-- Submit the processed data to the ML model to make the predictions;
-- Process the predictions obtained and return them as the API's response ot the input request.
-
 ## Importance of Project  
 The dataset used contains a list of patients in a hospital and their attributes and whether the patient is positive for Sepssis or not. 
 
@@ -39,18 +28,6 @@ Predicting sepsis is important because early recognition and intervention can si
 
 
 # Dataset Description -
-
-The provided data is a modified version of a publicly available data source, and is subject to copyright.
-
-### Donor of database: 
-                          The Johns Hopkins University
-                          Johns Hopkins Road
-                          Laurel, MD 20707
-                          (301) 953-6231
-
-### Licence agreement: 
-
-The dataset can only be used for the purpose of this assignment. Sharing or distributing this data or using this data for any other commercial or non-commercial purposes is prohibited.
 
 
 ### Data Fields
@@ -69,9 +46,6 @@ The dataset can only be used for the purpose of this assignment. Sharing or dist
 | Insurance | N/A     | If a patient holds a valid insurance card|
 | Sepssis                 | Target           | Positive: if a patient in ICU will develop a sepsis , and Negative: otherwise |
 
-
-
-### Missing Attribute Values: Yes
 
 ## Setup
 
@@ -106,7 +80,7 @@ The both long command-lines have a same structure, they pipe multiple commands u
 
           uvicorn src.demo_01.api:app --reload 
 
-    <!-- - Salary prediction
+    <!-- - Sepsis prediction
 
           uvicorn src.salary.api:app --reload  -->
 
@@ -139,16 +113,10 @@ Here are some ressources you would read to have a good understanding of FastAPI 
 - [FastAPI Tutorial Series](https://www.youtube.com/watch?v=tKL6wEqbyNs&list=PLShTCj6cbon9gK9AbDSxZbas1F6b6C_Mx)
 - [Http status codes](https://www.linkedin.com/feed/update/urn:li:activity:7017027658400063488?utm_source=share&utm_medium=member_desktop)
 
+## 👏 Support
 
-
-
-
-## Contributing
-
-Feel free to make a PR or report an issue 😃.
-
-Oh, one more thing, please do not forget to put a description when you make your PR 🙂.
+If you found this article helpful, please give it a clap or a star on GitHub!
 
 ## Author
 
-- [Gilbert Botchway](https://www.linkedin.com/in/gilbert-botchway/)
+- [Emmanuel Ikogho](https://www.linkedin.com/in/emmanuel-ikogho-6b959b24b/)
