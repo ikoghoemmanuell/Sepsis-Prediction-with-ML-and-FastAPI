@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 import pickle
+import pandas as pd
+import numpy as np
 
 app = FastAPI()
 
@@ -27,15 +29,12 @@ def input_df_creator(data: InputData):
 def predict_churn(data: InputData):
     input_df = input_df_creator(data)
 
-    # Encode categorical variables
-    # cat_cols = input_df.select_dtypes(include=['object']).columns
-    # cat_encoded = encoder.transform(input_df[cat_cols])
-
     # Scale numerical variables
     num_cols = input_df.select_dtypes(include=['int64', 'float64']).columns
-    num_scaled = scaler.transform(input_df[num_cols])
+    num_scaled = scaler.transform(input_df)
     
-    processed_df = num_scaled
+    # processed_df = num_scaled
+    processed_df = pd.DataFrame(num_scaled, columns = ['Blood_Work_R1', 'Blood_Pressure', 'Blood_Work_R3', 'BMI', 'Blood_Work_R4', 'Patient_age'])
 
     # Make prediction
     prediction = model.predict(processed_df)
