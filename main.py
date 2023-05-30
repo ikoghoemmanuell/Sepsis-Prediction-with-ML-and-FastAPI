@@ -37,7 +37,6 @@ def predict(df, endpoint="simple"):
 
     # Scaling
     scaled_df = scaler.transform(df)
-    print(f"INFO: Scaled dataframe:\n{scaled_df}")
 
     # Prediction
     prediction = model.predict_proba(scaled_df)
@@ -45,22 +44,21 @@ def predict(df, endpoint="simple"):
 
     # Formatting of the prediction
     highest_proba = prediction.max(axis=1)
-    print(f"INFO: Highest probabilities: {highest_proba}")
 
     highest_proba_idx = prediction.argmax(axis=1)
-    print(f"INFO: Highest probability indexes: {highest_proba_idx}")
 
     predicted_labels = ["Negative" if i == 0 else "Positive" for i in highest_proba_idx]
     print(f"INFO: Predicted labels: {predicted_labels}")
 
-    parsed_output = []
+    response = []
     for label, proba in zip(predicted_labels, highest_proba):
-        output = {"predicted_proba": proba, "predicted_label": label}
-        parsed_output.append(output)
+        output = {
+            "predicted_proba": proba,
+            "predicted_label": label
+        }
+        response.append(output)
 
-    print(f"INFO: Parsed output:\n{parsed_output}")
-
-    return parsed_output
+    return response
 
 
 class Patient(BaseModel):
@@ -72,11 +70,16 @@ class Patient(BaseModel):
     Patient_age: int
 
 class Patients(BaseModel):
-    all: list[Patient]
+    all_patients: list[Patient]
 
     @classmethod
     def return_list_of_dict(cls, patients: "Patients"):
-        return [patient.dict() for patient in patients.all]
+        patient_list = []
+        for patient in patients.all_patients:
+            patient_dict = patient.dict()
+            patient_list.append(patient_dict)
+        return patient_list
+
 
 labels = load_model().classes_
 
@@ -89,20 +92,14 @@ def root():
 def checkup(a: int = None, b: int = 0):
     return {"a": a, "b": b}
 
-## ML endpoint
+## Prediction endpoint
 @app.post("/predict")
-def predict_sepsis(patient: Patient):
-    """Make prediction with the passed data"""
-    data = pd.DataFrame(patient.dict(), index=[0])
-    parsed = predict(df=data)
-    return {"output": parsed}
-
-@app.post("/predict_multi")
 def predict_sepsis_for_multiple_patients(patients: Patients):
     """Make prediction with the passed data"""
     data = pd.DataFrame(Patients.return_list_of_dict(patients))
     parsed = predict(df=data, endpoint="multi")
     return {"output": parsed}
+
 
 
 if __name__ == "__main__":
