@@ -50,15 +50,17 @@ def predict(df, endpoint="simple"):
     highest_proba_idx = prediction.argmax(axis=1)
     print(f"INFO: Highest probability indexes: {highest_proba_idx}")
 
-    predicted_classes = [labels[i] for i in highest_proba_idx]
-    print(f"INFO: Predicted classes: {predicted_classes}")
+    predicted_labels = ["Negative" if i == 0 else "Positive" for i in highest_proba_idx]
+    print(f"INFO: Predicted labels: {predicted_labels}")
 
-    df["predicted_proba"] = highest_proba
-    df["predicted_label"] = predicted_classes
-    print(f"INFO: DataFrame with prediction:\n{df}")
+    parsed_output = []
+    for label, proba in zip(predicted_labels, highest_proba):
+        output = {"predicted_proba": proba, "predicted_label": label}
+        parsed_output.append(output)
 
-    parsed = df.to_dict('records')
-    return parsed
+    print(f"INFO: Parsed output:\n{parsed_output}")
+
+    return parsed_output
 
 
 class Patient(BaseModel):
@@ -69,14 +71,12 @@ class Patient(BaseModel):
     Blood_Work_R4: float
     Patient_age: int
 
-
 class Patients(BaseModel):
     all: list[Patient]
-    
-    @classmethod
-    def return_list_of_dict(cls):
-        return [i.dict() for i in cls.all]
 
+    @classmethod
+    def return_list_of_dict(cls, patients: "Patients"):
+        return [patient.dict() for patient in patients.all]
 
 labels = load_model().classes_
 
@@ -100,7 +100,7 @@ def predict_sepsis(patient: Patient):
 @app.post("/predict_multi")
 def predict_sepsis_for_multiple_patients(patients: Patients):
     """Make prediction with the passed data"""
-    data = pd.DataFrame(patients.return_list_of_dict())
+    data = pd.DataFrame(Patients.return_list_of_dict(patients))
     parsed = predict(df=data, endpoint="multi")
     return {"output": parsed}
 
