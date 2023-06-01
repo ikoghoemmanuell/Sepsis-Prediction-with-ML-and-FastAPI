@@ -6,6 +6,9 @@
 
 Develop a Machine Learning API (Application Programming Interface) using FastAPI.
 
+![ai(1)](https://github.com/ikoghoemmanuell/Machine-Learning-API-using-FastAPI/assets/102419217/1d7624dd-f9ab-4c53-a701-d5bb95ef7913)
+
+
 ## Introduction
 
 In this project, Icreate an API that might be requested to interact with a ML model. This enables individuals and organizations keep their model architecture secret or to make their model available to users already having an API. By creating an API, and deploying it, a model can receive request using the internet protocol as presented by the illustration below.
