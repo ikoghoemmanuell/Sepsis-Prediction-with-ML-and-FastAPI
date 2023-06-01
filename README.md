@@ -1,18 +1,15 @@
 # Machine Learning API using FastAPI
 [![View My Profile](https://img.shields.io/badge/View-My_Profile-green?logo=GitHub)](https://github.com/your-github-username)
 [![View Repositories](https://img.shields.io/badge/View-My_Repositories-blue?logo=GitHub)](https://github.com/your-github-username?tab=repositories)
-
 [![View My Profile](https://img.shields.io/badge/MEDIUM-Article-purple?logo=Medium)](https://medium.com/@emmanuel.ikogho/deploying-a-machine-learning-model-with-gradio-97d4f8c5e795)
 
 Develop a Machine Learning API (Application Programming Interface) using FastAPI.
 
+![ai(1)](https://github.com/ikoghoemmanuell/Machine-Learning-API-using-FastAPI/assets/102419217/1d7624dd-f9ab-4c53-a701-d5bb95ef7913)
+
+
 ## Introduction
-
-In this project, Icreate an API that might be requested to interact with a ML model. This enables individuals and organizations keep their model architecture secret or to make their model available to users already having an API. By creating an API, and deploying it, a model can receive request using the internet protocol as presented by the illustration below.
-
-![API illustration](https://lh3.googleusercontent.com/-qVJ4ZsbjsmH6CnYbojsAR4ImyHV8yxsFVinunH-pX7VCapGvufcXiPak6YVKIrj9ZdiCHwK5UFtQW8yuU5t83pz6fbqN1F2p74OWuT5dObCPnTBuCYr_P1mUg8arbP0WuEt7j_A)
-
-**Source** : *The benefits of Machine Learning APIs - UbiOps*
+We will explore a comprehensive machine learning project focused on predicting sepsis using classification techniques. By leveraging FastAPI, we were able to deploy the model as a user-friendly API, enabling real-time predictions. The combination of machine learning and web development has immense potential in healthcare and can significantly contribute to early sepsis detection and patient care.
 
 ## Description
 ## Importance of Project  
@@ -20,31 +17,28 @@ The dataset used contains a list of patients in a hospital and their attributes 
 
 Sepsis is a severe and potentially life-threatening condition that occurs when the body's response to an infection triggers widespread inflammation. It is often referred to as blood poisoning.
 
-Sepsis can develop when the immune system releases chemicals into the bloodstream to combat an infection but instead causes widespread inflammation throughout the body. 
 The aim of this project is to explore the various factors that can cause sepsis in order to predict the occurence of sepsis.
-
 
 Predicting sepsis is important because early recognition and intervention can significantly improve patient outcomes. Sepsis can progress rapidly and become life-threatening within a short period. By identifying patients who are at risk of developing sepsis, healthcare providers can initiate timely treatment and interventions to prevent the condition from worsening.
 
 
 # Dataset Description -
 
+The data for this project is in a csv format. The following describes the columns present in the data.
 
-### Data Fields
-
-| Column   Name                | Attribute/Target | Description                                                                                                                                                                                                  |
+| Column   Name                | Target | Description                                                                                                                                                                                                  |
 |------------------------------|------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | ID                           | N/A              | Unique number to represent patient ID                                                                                                                                                                        |
-| PRG           | Attribute1       |  Plasma glucose|
-| PL               | Attribute 2     |   Blood Work Result-1 (mu U/ml)                                                                                                                                                |
-| PR              | Attribute 3      | Blood Pressure (mm Hg)|
-| SK              | Attribute 4      | Blood Work Result-2 (mm)|
-| TS             | Attribute 5      |     Blood Work Result-3 (mu U/ml)|                                                                                  
-| M11     | Attribute 6    |  Body mass index (weight in kg/(height in m)^2|
-| BD2             | Attribute 7     |   Blood Work Result-4 (mu U/ml)|
-| Age              | Attribute 8      |    patients age  (years)|
+| PRG           | False       |  Plasma glucose|
+| PL               | False     |   Blood Work Result-1 (mu U/ml)                                                                                                                                                |
+| PR              | False     | Blood Pressure (mm Hg)|
+| SK              | False     | Blood Work Result-2 (mm)|
+| TS             | False      |     Blood Work Result-3 (mu U/ml)|                                                                                  
+| M11     | False    |  Body mass index (weight in kg/(height in m)^2|
+| BD2             | False     |   Blood Work Result-4 (mu U/ml)|
+| Age              | False      |    patients age  (years)|
 | Insurance | N/A     | If a patient holds a valid insurance card|
-| Sepssis                 | Target           | Positive: if a patient in ICU will develop a sepsis , and Negative: otherwise |
+| Sepssis                 | True           | Positive: if a patient in ICU will develop a sepsis , and Negative: otherwise |
 
 
 ## Setup
