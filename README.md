@@ -1,11 +1,11 @@
 # Machine Learning API using FastAPI
 [![View My Profile](https://img.shields.io/badge/View-My_Profile-green?logo=GitHub)](https://github.com/your-github-username)
 [![View Repositories](https://img.shields.io/badge/View-My_Repositories-blue?logo=GitHub)](https://github.com/your-github-username?tab=repositories)
-[![View My Profile](https://img.shields.io/badge/MEDIUM-Article-purple?logo=Medium)](https://medium.com/@emmanuel.ikogho/deploying-a-machine-learning-model-with-gradio-97d4f8c5e795)
+[![View My Profile](https://img.shields.io/badge/MEDIUM-Article-purple?logo=Medium)](https://medium.com/@emmanuel.ikogho/classification-predicting-sepsis-with-machine-learning-and-fastapi-3a3d05d0b5b4)
 
 Develop a Machine Learning API (Application Programming Interface) using FastAPI.
 
-![ai(1)](https://github.com/ikoghoemmanuell/Machine-Learning-API-using-FastAPI/assets/102419217/1d7624dd-f9ab-4c53-a701-d5bb95ef7913)
+![ai(3)](https://github.com/ikoghoemmanuell/Machine-Learning-API-using-FastAPI/assets/102419217/1566fe8f-68bc-48fd-b9e0-2f8de41fd18c)
 
 
 ## Introduction
