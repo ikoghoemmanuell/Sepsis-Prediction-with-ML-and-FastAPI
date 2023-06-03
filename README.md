@@ -82,18 +82,9 @@ The both long command-lines have a same structure, they pipe multiple commands u
   - Go to your browser at the following address, to explore the api's documentation :
     http://127.0.0.1:8000/docs
 
-<!-- ## Screenshots
-
-<table>
-    <tr>
-        <th>FastAPI</th>
-        <th>FastAPI</th>
-    </tr>
-    <tr>
-        <td><img src="./screenshots/.png"/></td>
-        <td><img src="./screenshots/.png"/></td>
-    </tr>
-</table> -->
+## Screenshots
+![ezgif com-optimize (1)](https://github.com/ikoghoemmanuell/Machine-Learning-API-using-FastAPI/assets/102419217/a8352c5f-afea-43b1-8bf5-c24607cf3481)
+![ezgif com-crop](https://github.com/ikoghoemmanuell/Machine-Learning-API-using-FastAPI/assets/102419217/df0ed5a8-2daf-47ca-a4f5-e6128429d5d3)
 
 ## Resources
 
