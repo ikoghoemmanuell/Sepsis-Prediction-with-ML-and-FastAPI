@@ -1,5 +1,15 @@
 fastapi[all]
 scikit-learn==1.2.1
-numpy
-pandas
+numpy==1.21.5
+pandas==1.3.1
 pydantic
+
+threadpoolctl==3.1.0
+seaborn==0.12.2
+matplotlib==3.5.2
+scipy==1.10.1
+patool
+forex_python
+imbalanced-learn==0.10.1
+xgboost==1.7.3
+statistics
