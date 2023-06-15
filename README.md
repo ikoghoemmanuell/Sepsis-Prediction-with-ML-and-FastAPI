@@ -51,10 +51,15 @@ You need to have [`Python 3`](https://www.python.org/) on your system (**a Pytho
 
 - Windows:
 
-        python -m venv venv; venv\Scripts\activate; python -m pip install -q --upgrade pip; python -m pip install -qr requirements.txt
+```python
+python -m venv venv; venv\Scripts\activate; python -m pip install -q --upgrade pip; python -m pip install -qr requirements.txt
+```
 
 - Linux & MacOs:
-  python3 -m venv venv; source venv/bin/activate; python -m pip install -q --upgrade pip; python -m pip install -qr requirements.txt
+
+```python
+python3 -m venv venv; source venv/bin/activate; python -m pip install -q --upgrade pip; python -m pip install -qr requirements.txt
+```
 
 The both long command-lines have a same structure, they pipe multiple commands using the symbol `;` but you may manually execute them one after another.
 
