@@ -71,21 +71,19 @@ The both long command-lines have a same structure, they pipe multiple commands u
 **NB:** For MacOs users, please install `Xcode` if you have an issue.
 
 ## Run FastAPI
+To run the fastAPI, paste this code to your terminal: 
+```python
+uvicorn main:app — reload
+```
 
-- Run the demo apps (being at the repository root):
-
-  FastAPI:
-
-  - Demo
-
-        uvicorn src.demo_01.api:app --reload
-
-    <!-- - Sepsis prediction
-
-          uvicorn src.salary.api:app --reload  -->
-
-  - Go to your browser at the following address, to explore the api's documentation :
-    http://127.0.0.1:8000/docs
+When you run the script and start the web server using Uvicorn, your FastAPI application becomes accessible at
+```python
+http://127.0.0.1:8000
+```
+To access the documentation of your API, you can simply add “/docs” to the URL:
+```python
+http://127.0.0.1:8000/docs
+```
 
 ## Screenshots
 ![ezgif com-optimize (1)](https://github.com/ikoghoemmanuell/Machine-Learning-API-using-FastAPI/assets/102419217/a8352c5f-afea-43b1-8bf5-c24607cf3481)
